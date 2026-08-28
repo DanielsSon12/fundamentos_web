@@ -1,0 +1,119 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 30px 20px;
+    color: #1e293b;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #e0e7ff, #dbeafe);
+}
+
+main {
+    width: 100%;
+    max-width: 720px;
+    min-height: 360px;
+    padding: 50px;
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    border-radius: 24px;
+    background-color: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 20px 45px rgba(30, 41, 59, 0.18);
+}
+
+.eyebrow {
+    margin: 0 0 10px;
+    color: #4f46e5;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.title {
+    margin: 0;
+    color: #172554;
+    font-size: 46px;
+    line-height: 1.1;
+}
+
+.describe {
+    margin: 16px 0 28px;
+    color: #64748b;
+    font-size: 17px;
+    line-height: 1.5;
+}
+
+.list {
+    display: grid;
+    gap: 12px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.item-list a {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    padding: 16px 18px;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    color: #172554;
+    font-weight: bold;
+    line-height: 1.4;
+    text-decoration: none;
+    background-color: #ffffff;
+    transition: 0.2s;
+}
+
+.item-list a::after {
+    content: "→";
+    color: #4f46e5;
+    font-size: 22px;
+}
+
+.item-list a:hover {
+    border-color: #a5b4fc;
+    color: #4338ca;
+    box-shadow: 0 8px 16px rgba(79, 70, 229, 0.12);
+    transform: translateY(-2px);
+}
+
+.button-previous {
+    display: inline-block;
+    margin-top: 28px;
+    padding: 12px 18px;
+    border-radius: 9px;
+    color: #ffffff;
+    font-weight: bold;
+    text-decoration: none;
+    background-color: #4f46e5;
+    transition: 0.2s;
+}
+
+.button-previous:hover {
+    background-color: #3730a3;
+    transform: translateY(-2px);
+}
+
+@media (max-width: 550px) {
+    body {
+        padding: 16px;
+    }
+
+    main {
+        min-height: 0;
+        padding: 32px 24px;
+        border-radius: 18px;
+    }
+
+    .title {
+        font-size: 34px;
+    }
+}
