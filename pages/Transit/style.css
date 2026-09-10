@@ -22,6 +22,8 @@ a {
   text-decoration: none;
 }
 
+/* NavBar */
+
 .header {
   position: relative;
   height: 600px;
@@ -49,11 +51,14 @@ a {
 
 .nav-links {
   display: flex;
+  flex-direction: row;
+  list-style: none;
   align-items: center;
   gap: 30px;
 }
 
-.nav-links a {
+.nav-links li,
+a {
   position: relative;
   color: var(--cinza-claro);
   font-size: 15px;
@@ -61,20 +66,19 @@ a {
   padding: 8px;
 }
 
-.nav-links a:hover {
+.nav-links li:hover a:hover {
   background-color: white;
   color: var(--cinza-chumbo-fonte);
   transition: 0.3s;
 }
 
-.nav-links a:last-child {
-  padding: 9px 18px;
+.nav-links li:last-child a:last-child {
   border: 1px solid white;
   border-radius: 20px;
   transition: 0.3s;
 }
 
-/* BANNER */
+/* Banner */
 
 .banner {
   height: 600px;
@@ -134,6 +138,8 @@ a {
 .btn:hover {
   background-color: rgb(91, 192, 240);
 }
+
+/* Cards Section */
 
 .cards-section {
   padding: 70px 0;
@@ -211,6 +217,8 @@ a {
   color: rgb(140, 140, 140);
 }
 
+/* Users Section */
+
 .users-section {
   padding: 70px 0;
   background-color: white;
@@ -280,6 +288,8 @@ a {
 .users-description button:hover {
   transform: scale(1.05);
 }
+
+/* Footer */
 
 .footer {
   padding: 50px 0 25px;
