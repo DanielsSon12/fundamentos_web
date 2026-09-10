@@ -172,7 +172,7 @@ a {
 }
 
 .card:hover {
-  transform: scale(1.05);
+  transform: scale(1.05) rotate(-2deg);
 }
 
 .icon {
@@ -346,8 +346,7 @@ a {
 }
 
 .social-links a:hover {
-  transform: scale(1.1);
-  transform: rotate(-20deg);
+  transform: scale(1.1) rotate(-20deg);
 }
 
 .social-links a:nth-child(1) {
