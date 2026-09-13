@@ -330,60 +330,6 @@ footer div p span {
     }
 }
 
-/* @media (max-width: 750px) {
-    .navbar {
-        width: 100%;
-        padding: 10px;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .navbar-list {
-        padding: 0;
-        gap: 5px;
-    }
-
-    .navbar-list li{
-        margin: 0;
-    }
-
-    .navbar-list li a {
-        font-size: 0.7rem;
-    }
-    .card {
-        width: 80%;
-    }
-
-    .card-title h1 {
-        font-size: 1.5rem;
-    }
-
-    .card-title p{
-        font-size: 0.9rem;
-    }
-
-    .card-list {
-        flex-direction: column;
-        align-items: center;
-        width: 100%;
-        gap: 20px;
-    }
-
-    .card-icon {
-        margin:20px;
-    }
-
-    .card-icon i {
-        font-size: 25px;
-    }
-
-    .card-text {
-        font-size: 0.6rem;
-        line-height: 1.2rem;
-        width: 100%;
-    }
-} */
-
 @media (max-width: 750px){
     /* NavBar */
     .navbar {
