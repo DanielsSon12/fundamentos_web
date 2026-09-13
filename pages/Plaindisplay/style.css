@@ -71,6 +71,7 @@ body {
 
 .navbar-list li a{
     text-decoration: none;
+    font-size: 1rem;
     color: var(--cinza-claro);
 }
 
@@ -233,3 +234,120 @@ footer div p span {
     color: var(--cinza-claro);
 }
 
+/* Responsividade */
+@media (max-width: 900px) {
+    /* Buttons */
+    .btn {
+        padding: 15px;
+        font-size: 0.8rem;
+        width: 200px;
+    }
+
+    /* Navbar */
+    .navbar h1 {
+        margin: 0;
+        font-size: 1.4rem;
+    }
+
+    .navbar-list {
+        gap: 10px;
+        margin: 0;
+    }
+
+    .navbar-list li a {
+        font-size: 0.8rem;
+    }
+
+    /* Banner */
+    .banner-title {
+        font-size: 1.8rem;
+    }
+
+    .banner-subtitle {
+        font-size: 1.1rem;
+    }
+
+    /* Cards */
+    .card {
+        width: 25%;
+    }
+
+    .card-title h1 {
+        font-size: 1.8rem;
+    }
+
+    .card-title p{
+        font-size: 1rem;
+    }
+
+    .card-list {
+        gap: 3%;
+    }
+
+    .card-icon {
+        margin:30px;
+    }
+
+    .card-icon i {
+        font-size: 35px;
+    }
+
+    .card-text {
+        font-size: 0.8rem;
+        line-height: 1.6rem;
+        width: 100%;
+    }
+
+    /* Info Section */
+    .info-title {
+        font-size: 1.8rem;
+    }
+
+    .info-subtitle {
+        font-size: 1rem;
+    }
+
+    .info-description {
+        font-size: 0.8rem;
+    }
+
+    /* Info 2 Section */
+    .info2-title{
+        font-size: 1.8rem;
+    } 
+
+    .info2-subtitle {
+        font-size: 1rem;
+    }
+
+    .info2-description {
+        font-size: 0.8rem;
+    }
+
+    /* Footer */
+    footer div p {
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 750px) {
+    /* Navbar */
+    .navbar {
+        width: 97%;
+        padding: 10px;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .navbar-list {
+        gap: 5px;
+    }
+
+    .navbar-list li{
+        margin: 0;
+    }
+
+    .navbar-list li a {
+        font-size: 0.7rem;
+    }
+}
