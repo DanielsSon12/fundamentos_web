@@ -1,0 +1,435 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    background:#002434;
+    font-family:Arial,sans-serif;
+    font-size:1rem;
+    color:#333;
+}
+
+header{
+    width:70%;
+    max-width:1000px;
+    margin:auto;
+}
+
+.navbar-container{
+    height:65px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.navbar-container h1{
+    color:white;
+    font-size:1.4rem;
+}
+
+.navbar-container h1 span{
+    color:#0086bd;
+}
+
+.navbar-container nav ul{
+    display:flex;
+    align-items:center;
+    gap:25px;
+    list-style:none;
+}
+
+.navbar-container nav li{
+    list-style:none;
+}
+
+.navbar-container nav a{
+    color:white;
+    text-decoration:none;
+    font-size:.8rem;
+    transition:.3s;
+}
+
+.navbar-container nav a:hover{
+    color:#0086bd;
+    transform:translateY(-2px);
+}
+
+.navbar-container nav .ativo{
+    color:#0086bd;
+}
+
+.banner{
+    background:white;
+    padding:10px;
+    position:relative;
+}
+
+.banner img{
+    width:100%;
+    height:250px;
+    display:block;
+    object-fit:cover;
+    object-position:center;
+}
+
+.banner-title{
+    position:absolute;
+    left:5%;
+    top:22%;
+    color:white;
+    width:50%;
+}
+
+.banner-title h2{
+    font-size:3.2rem;
+    font-weight:normal;
+    margin-bottom:7px;
+}
+
+.banner-title p{
+    font-size:.8rem;
+    line-height:1.4;
+    width:70%;
+}
+
+main{
+    width:70%;
+    max-width:1000px;
+    margin:auto;
+    background:white;
+}
+
+.cards-container{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:2%;
+    padding:3% 2%;
+}
+
+.card{
+    background:#0076aa;
+    color:white;
+    padding:7%;
+    min-height:205px;
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-3px);
+}
+
+.card h2{
+    font-size:1.15rem;
+    margin-bottom:14px;
+}
+
+.card p{
+    font-size:.82rem;
+    line-height:1.55;
+    margin-bottom:20px;
+}
+
+.card button{
+    border:0;
+    background:#00a6df;
+    color:white;
+    padding:11px 15px;
+    font-size:.75rem;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.card button:hover{
+    transform:scale(1.04);
+}
+
+.conteudo{
+    display:grid;
+    grid-template-columns:2fr 1fr;
+    gap:5%;
+    padding:0 2% 3%;
+}
+
+.principal h2,
+aside h2{
+    font-size:1.15rem;
+    font-weight:normal;
+    margin-bottom:14px;
+}
+
+.informacao{
+    display:flex;
+    gap:3%;
+}
+
+.informacao img{
+    width:48%;
+    height:150px;
+    object-fit:cover;
+}
+
+.informacao div{
+    flex:1;
+}
+
+.informacao p{
+    font-size:.78rem;
+    line-height:1.55;
+    margin-bottom:10px;
+}
+
+.informacao a{
+    color:#0076aa;
+    text-decoration:none;
+    font-size:.78rem;
+}
+
+.informacao a:hover{
+    text-decoration:underline;
+}
+
+aside h2{
+    margin-bottom:14px;
+}
+
+.post{
+    background:#d5f0ff;
+    padding:9%;
+}
+
+.post p{
+    font-size:.78rem;
+    line-height:1.55;
+    font-style:italic;
+}
+
+.autor{
+    display:block;
+    font-size:.65rem;
+    margin-top:10px;
+}
+
+footer{
+    width:70%;
+    max-width:1000px;
+    margin:auto;
+    background:#002434;
+    color:white;
+}
+
+footer nav{
+    background:#d5f0ff;
+    padding:16px;
+}
+
+footer nav ul{
+    display:flex;
+    justify-content:center;
+    gap:35px;
+    list-style:none;
+}
+
+footer nav li{
+    list-style:none;
+}
+
+footer nav a{
+    color:#0076aa;
+    text-decoration:none;
+    font-size:.7rem;
+}
+
+footer nav a:hover{
+    color:#002434;
+}
+
+.infos-footer{
+    padding:13px 2%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.infos-footer p{
+    font-size:.6rem;
+}
+
+.infos-footer p span{
+    text-decoration:underline;
+    font-weight:bold;
+}
+
+.redes{
+    display:flex;
+    gap:12px;
+}
+
+.redes a{
+    color:white;
+    text-decoration:none;
+    font-size:1.6rem;
+}
+
+.redes a:hover{
+    color:#00a6df;
+}
+
+@media(max-width:900px){
+
+    header,
+    main,
+    footer{
+        width:90%;
+    }
+
+    .navbar-container{
+        height:auto;
+        padding:18px 2%;
+        flex-direction:column;
+        gap:18px;
+    }
+
+    .navbar-container nav ul{
+        flex-wrap:wrap;
+        justify-content:center;
+        gap:18px;
+    }
+
+    .banner img{
+        height:230px;
+    }
+
+    .cards-container{
+        grid-template-columns:1fr;
+        gap:18px;
+    }
+
+    .card{
+        min-height:auto;
+    }
+
+    .conteudo{
+        grid-template-columns:1fr;
+        gap:30px;
+    }
+}
+
+@media(max-width:600px){
+
+    header,
+    main,
+    footer{
+        width:95%;
+    }
+
+    .navbar-container h1{
+        font-size:1.2rem;
+    }
+
+    .navbar-container nav ul{
+        gap:12px;
+    }
+
+    .navbar-container nav a{
+        font-size:.72rem;
+    }
+
+    .banner{
+        padding:7px;
+    }
+
+    .banner img{
+        height:190px;
+    }
+
+    .banner-title{
+        top:20%;
+        left:7%;
+    }
+
+    .banner-title h2{
+        font-size:2.2rem;
+    }
+
+    .banner-title p{
+        font-size:.65rem;
+    }
+
+    .cards-container{
+        padding:5%;
+    }
+
+    .card{
+        padding:7%;
+    }
+
+    .card h2{
+        font-size:1.1rem;
+    }
+
+    .card p{
+        font-size:.78rem;
+    }
+
+    .conteudo{
+        padding:0 5% 6%;
+    }
+
+    .principal h2,
+    aside h2{
+        font-size:1.1rem;
+    }
+
+    .informacao{
+        flex-direction:column;
+    }
+
+    .informacao img{
+        width:100%;
+        height:auto;
+    }
+
+    .informacao p{
+        font-size:.78rem;
+    }
+
+    .post p{
+        font-size:.78rem;
+    }
+
+    footer nav ul{
+        gap:15px;
+        flex-wrap:wrap;
+    }
+
+    footer nav a{
+        font-size:.65rem;
+    }
+
+    .infos-footer{
+        flex-direction:column;
+        gap:10px;
+        text-align:center;
+    }
+}
+
+@media(max-width:400px){
+
+    .navbar-container h1{
+        font-size:1.05rem;
+    }
+
+    .navbar-container nav ul{
+        gap:9px;
+    }
+
+    .navbar-container nav a{
+        font-size:.65rem;
+    }
+
+    .banner-title h2{
+        font-size:2rem;
+    }
+}
