@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="./script.js" defer></script>
+  <title>Lista de Exercícios - JavaScript String API</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f4f6f8;
+      color: #1f2937;
+      line-height: 1.6;
+    }
+
+    header {
+      background: #111827;
+      color: #fff;
+      padding: 32px 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0 0 8px;
+      font-size: 2rem;
+    }
+
+    header p {
+      margin: 0;
+      color: #d1d5db;
+    }
+
+    main {
+      width: min(1000px, 92%);
+      margin: 32px auto;
+    }
+
+    .questao {
+      background: #fff;
+      border-radius: 12px;
+      padding: 24px;
+      margin-bottom: 22px;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+      border-left: 5px solid #2563eb;
+    }
+
+    .questao h2 {
+      margin-top: 0;
+      color: #1d4ed8;
+      font-size: 1.3rem;
+    }
+
+    pre {
+      background: #111827;
+      color: #f9fafb;
+      padding: 16px;
+      border-radius: 8px;
+      overflow-x: auto;
+    }
+
+    code {
+      font-family: Consolas, Monaco, monospace;
+    }
+
+    .conceitos {
+      background: #eff6ff;
+      border: 1px solid #bfdbfe;
+      padding: 12px 14px;
+      border-radius: 8px;
+      margin-top: 16px;
+    }
+
+    .input {
+        padding: 3px;
+        border: 1px solid #333;
+        width: 300px;
+        border-radius: 5px;
+        margin-bottom: 10px;
+    }
+    .btn {
+        display: block;
+    }
+    .desafio {
+      background: #fff7ed;
+      border: 1px solid #fed7aa;
+      padding: 12px 14px;
+      border-radius: 8px;
+      margin-top: 16px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: #fff;
+      margin-top: 20px;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.06);
+    }
+
+    th, td {
+      padding: 12px;
+      border-bottom: 1px solid #e5e7eb;
+      text-align: left;
+    }
+
+    th {
+      background: #2563eb;
+      color: white;
+    }
+
+    footer {
+      text-align: center;
+      padding: 24px;
+      color: #6b7280;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Lista de Exercícios — JavaScript String API</h1>
+    <p>10 exercícios práticos com dificuldade progressiva</p>
+  </header>
+
+  <main>
+
+    <section class="questao">
+      <h2>1. Padronização de nome</h2>
+      <p>Considere o código abaixo:</p>
+
+      <pre><code>const nome = "   joÃO da silVA   ";</code></pre>
+
+      <p>Crie um programa que:</p>
+      <ol>
+        <li>Remova os espaços no início e no final da string.</li>
+        <li>Converta o nome para letras minúsculas.</li>
+        <li>Exiba o resultado no console.</li>
+      </ol>
+
+      <p><strong>Resultado esperado:</strong></p>
+      <pre><code>joão da silva</code></pre>
+
+      <div class="conceitos">
+        <strong>Conceitos:</strong> <code>trim()</code>, <code>toLowerCase()</code>.
+      </div>
+
+      <div id="questao1" class="questao">
+        <input type="text" id="input1" placeholder="Digite uma string de teste" class="input">
+        <button class="btn" id="btn1">Remover espaços vazios</button>
+        <p id="resultado1" class="resultado"></p>
+      </div>
+    </section>
+
+    <section class="questao">
+      <h2>2. Verificação de domínio de e-mail</h2>
+
+      <pre><code>const email = "aluno@exemplo.com";</code></pre>
+
+      <p>Escreva um programa que verifique se o e-mail pertence ao domínio <code>@exemplo.com</code>.</p>
+
+      <p>O programa deverá imprimir:</p>
+      <pre><code>E-mail válido</code></pre>
+
+      <p>ou:</p>
+      <pre><code>E-mail inválido</code></pre>
+
+      <div class="conceitos">
+        <strong>Conceito principal:</strong> <code>endsWith()</code>.
+      </div>
+
+      <div id="questao2" class="questao">
+        <input type="text" id="input2" placeholder="Digite um email teste" class="input">
+        <button class="btn" id="btn2">Executar</button>
+        <p id="resultado2" class="resultado"></p>
+      </div>
+    </section>
+
+    <section class="questao">
+      <h2>3. Contagem de caracteres</h2>
+
+      <pre><code>const frase = "JavaScript é muito interessante";</code></pre>
+
+      <p>Crie um programa que mostre:</p>
+      <ol>
+        <li>A quantidade total de caracteres.</li>
+        <li>A quantidade de caracteres desconsiderando os espaços.</li>
+      </ol>
+
+      <p><strong>Exemplo de saída:</strong></p>
+      <pre><code>Total: 32
+Sem espaços: 28</code></pre>
+
+      <div class="conceitos">
+        <strong>Conceitos:</strong> <code>length</code>, <code>replaceAll()</code>.
+      </div>
+
+      <div id="questao3" class="questao">
+        <input type="text" id="input3" placeholder="Digite uma frase teste" class="input">
+        <button class="btn" id="btn3">Executar</button>
+        <p id="resultado3" class="resultado"></p>
+      </div>
+    </section>
+
+    <section class="questao">
+      <h2>4. Busca de palavra</h2>
+
+      <pre><code>const mensagem = "Estou estudando JavaScript para desenvolver aplicações web.";</code></pre>
+
+      <p>Verifique se a palavra <code>JavaScript</code> aparece na mensagem.</p>
+
+      <p>O programa deve exibir:</p>
+      <pre><code>A mensagem contém JavaScript.</code></pre>
+
+      <p>ou:</p>
+      <pre><code>A mensagem não contém JavaScript.</code></pre>
+
+      <div class="conceitos">
+        <strong>Conceito principal:</strong> <code>includes()</code>.
+      </div>
+
+      <div id="questao4" class="questao">
+        <textarea id="input4" placeholder="Digite uma frase teste" class="input"></textarea>
+        <button class="btn" id="btn4">Executar</button>
+        <p id="resultado4" class="resultado"></p>
+      </div>
+    </section>
+
+    <section class="questao">
+      <h2>5. Extração de nome de usuário</h2>
+
+      <pre><code>const email = "carlos.silva@gmail.com";</code></pre>
+
+      <p>Extraia somente o nome do usuário, ou seja, a parte que aparece antes do <code>@</code>.</p>
+
+      <p><strong>Resultado esperado:</strong></p>
+      <pre><code>carlos.silva</code></pre>
+
+      <div class="conceitos">
+        <strong>Sugestão:</strong> utilize <code>indexOf()</code> e <code>slice()</code>.
+      </div>
+
+      <div id="questao5" class="questao">
+        <input type="text" id="input5" placeholder="Digite um nome teste" class="input">
+        <button class="btn" id="btn5">Executar</button>
+        <p id="resultado5" class="resultado"></p>
+      </div>
+    </section>
+
+    <section class="questao">
+      <h2>6. Substituição de informações</h2>
+
+      <pre><code>const mensagem = "Olá, João! Seja bem-vindo, João!";</code></pre>
+
+      <p>Substitua todas as ocorrências de <code>João</code> por <code>Maria</code>.</p>
+
+      <p><strong>Resultado esperado:</strong></p>
+      <pre><code>Olá, Maria! Seja bem-vindo, Maria!</code></pre>
+
+      <div class="conceitos">
+        <strong>Conceito principal:</strong> <code>replaceAll()</code>.
+      </div>
+
+      <div class="desafio">
+        <strong>Desafio extra:</strong> resolva também utilizando <code>replace()</code> com expressão regular.
+      </div>
+      <div id="questao6" class="questao">
+        <textarea id="input6" placeholder="Digite uma frase teste" class="input"></textarea>
+        <button class="btn" id="btn6">Executar</button>
+        <p id="resultado6" class="resultado"></p>
+      </div>
+    </section>
+
+    <section class="questao">
+      <h2>7. Formatação de código de produto</h2>
+
+      <pre><code>const codigo = "abc123456";</code></pre>
+
+      <p>Crie um programa que transforme o código para o seguinte formato:</p>
+
+      <pre><code>ABC-123456</code></pre>
+
+      <p>O programa deverá:</p>
+      <ol>
+        <li>Converter as letras para maiúsculas.</li>
+        <li>Inserir um hífen depois das três primeiras letras.</li>
+      </ol>
+
+      <div class="conceitos">
+        <strong>Conceitos:</strong> <code>toUpperCase()</code>, <code>slice()</code>.
+      </div>
+
+      <div id="questao7" class="questao">
+        <input type="text" id="input7" placeholder="Digite um código de teste" class="input">
+        <button class="btn" id="btn7">Executar</button>
+        <p id="resultado7" class="resultado"></p>
+      </div>
+    </section>
+
+    <section class="questao">
+      <h2>8. Inversão de uma string</h2>
+
+      <pre><code>const palavra = "javascript";</code></pre>
+
+      <p>Crie uma função chamada <code>inverterString()</code> que receba uma string e retorne os caracteres na ordem inversa.</p>
+
+      <p><strong>Exemplo:</strong></p>
+      <pre><code>console.log(inverterString("javascript"));</code></pre>
+
+      <p><strong>Resultado esperado:</strong></p>
+      <pre><code>tpircsavaj</code></pre>
+
+      <div class="desafio">
+        <strong>Restrição:</strong> não utilize um loop <code>for</code> para realizar a inversão.
+      </div>
+
+      <div class="conceitos">
+        <strong>Conceitos:</strong> <code>split()</code>, <code>reverse()</code>, <code>join()</code>.
+      </div>
+
+      <div id="questao8" class="questao">
+        <textarea id="input8" placeholder="Digite uma frase teste" class="input"></textarea>
+        <button class="btn" id="btn8">Executar</button>
+        <p id="resultado8" class="resultado"></p>
+      </div>
+    </section>
+
+    <section class="questao">
+      <h2>9. Análise de uma senha</h2>
+
+      <pre><code>const senha = "JavaScript123";</code></pre>
+
+      <p>Crie uma função que verifique se a senha atende aos seguintes requisitos:</p>
+
+      <ul>
+        <li>Possui pelo menos 8 caracteres.</li>
+        <li>Possui pelo menos uma letra maiúscula.</li>
+        <li>Possui pelo menos uma letra minúscula.</li>
+        <li>Possui pelo menos um número.</li>
+      </ul>
+
+      <p>A função deverá retornar <code>true</code> caso todos os requisitos sejam atendidos ou <code>false</code> caso contrário.</p>
+
+      <div class="desafio">
+        <strong>Desafio:</strong> resolva utilizando principalmente operações sobre <code>String</code>.
+      </div>
+
+      <div id="questao9" class="questao">
+        <input type="text" id="input9" placeholder="Digite uma senha teste" class="input">
+        <button class="btn" id="btn9">Executar</button>
+        <p id="resultado9" class="resultado"></p>
+      </div>
+    </section>
+
+    <section class="questao">
+      <h2>10. Formatação de nome completo</h2>
+
+      <pre><code>const nome = "   maria   da   silva   ";</code></pre>
+
+      <p>Crie uma função <code>formatarNome()</code> que:</p>
+
+      <ol>
+        <li>Remova espaços desnecessários no início e no final.</li>
+        <li>Elimine espaços duplicados entre as palavras.</li>
+        <li>Converta o nome para letras minúsculas.</li>
+        <li>Coloque a primeira letra de cada palavra em maiúscula.</li>
+      </ol>
+
+      <p><strong>Resultado esperado:</strong></p>
+      <pre><code>Maria Da Silva</code></pre>
+
+      <div class="conceitos">
+        <strong>Sugestão:</strong> utilize <code>trim()</code>, <code>split()</code>, <code>map()</code>,
+        <code>toLowerCase()</code>, <code>toUpperCase()</code>, <code>slice()</code> e <code>join()</code>.
+      </div>
+
+      <div id="questao10" class="questao">
+        <input type="text" id="input10" placeholder="Digite um nome teste" class="input">
+        <button class="btn" id="btn10">Executar</button>
+        <p id="resultado10" class="resultado"></p>
+      </div>
+    </section>
+
+    <h2>Progressão de dificuldade</h2>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Exercício</th>
+          <th>Tema principal</th>
+          <th>Nível</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>1</td><td>trim() / maiúsculas e minúsculas</td><td>⭐</td></tr>
+        <tr><td>2</td><td>endsWith()</td><td>⭐</td></tr>
+        <tr><td>3</td><td>length / replaceAll()</td><td>⭐⭐</td></tr>
+        <tr><td>4</td><td>includes()</td><td>⭐⭐</td></tr>
+        <tr><td>5</td><td>indexOf() / slice()</td><td>⭐⭐</td></tr>
+        <tr><td>6</td><td>replace() / replaceAll()</td><td>⭐⭐⭐</td></tr>
+        <tr><td>7</td><td>slice() / toUpperCase()</td><td>⭐⭐⭐</td></tr>
+        <tr><td>8</td><td>split() / reverse() / join()</td><td>⭐⭐⭐</td></tr>
+        <tr><td>9</td><td>Validação de senha</td><td>⭐⭐⭐⭐</td></tr>
+        <tr><td>10</td><td>Tratamento e formatação de texto</td><td>⭐⭐⭐⭐⭐</td></tr>
+      </tbody>
+    </table>
+
+  </main>
+
+  <footer>
+    Lista de exercícios de JavaScript — API String
+  </footer>
+
+</body>
+</html>

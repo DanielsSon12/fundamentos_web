@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="./script.js" defer></script>
+  <title>Lista de Exercícios — JavaScript Number API</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f4f6f8;
+      color: #1f2937;
+      line-height: 1.6;
+    }
+    header {
+      background: #111827;
+      color: white;
+      text-align: center;
+      padding: 34px 20px;
+    }
+    header h1 { margin: 0 0 8px; font-size: 2rem; }
+    header p { margin: 0; color: #d1d5db; }
+    main { width: min(1000px, 92%); margin: 32px auto; }
+    .questao {
+      background: white;
+      border-radius: 12px;
+      padding: 24px;
+      margin-bottom: 22px;
+      box-shadow: 0 4px 14px rgba(0,0,0,.08);
+      border-left: 5px solid #2563eb;
+    }
+    .questao h2 { margin-top: 0; color: #1d4ed8; font-size: 1.3rem; }
+    pre {
+      background: #111827;
+      color: #f9fafb;
+      padding: 16px;
+      border-radius: 8px;
+      overflow-x: auto;
+    }
+    code { font-family: Consolas, Monaco, monospace; }
+    .conceitos {
+      background: #eff6ff;
+      border: 1px solid #bfdbfe;
+      padding: 12px 14px;
+      border-radius: 8px;
+      margin-top: 16px;
+    }
+    .desafio {
+      background: #fff7ed;
+      border: 1px solid #fed7aa;
+      padding: 12px 14px;
+      border-radius: 8px;
+      margin-top: 16px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: white;
+      margin-top: 20px;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 14px rgba(0,0,0,.06);
+    }
+    th, td {
+      padding: 12px;
+      border-bottom: 1px solid #e5e7eb;
+      text-align: left;
+    }
+    th { background: #2563eb; color: white; }
+    footer {
+      text-align: center;
+      padding: 24px;
+      color: #6b7280;
+      font-size: .9rem;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Lista de Exercícios — JavaScript Number API</h1>
+  <p>10 exercícios práticos com dificuldade progressiva</p>
+</header>
+
+<main>
+
+<section class="questao">
+  <h2>1. Arredondamento de um número</h2>
+  <p>Considere:</p>
+  <pre><code>const valor = 17.684;</code></pre>
+  <p>Crie um programa que exiba:</p>
+  <ol>
+    <li>O número arredondado para o inteiro mais próximo.</li>
+    <li>O número arredondado para baixo.</li>
+    <li>O número arredondado para cima.</li>
+  </ol>
+  <p><strong>Resultado esperado:</strong></p>
+  <pre><code>18
+17
+18</code></pre>
+  <div class="conceitos"><strong>Conceitos:</strong> <code>Math.round()</code>, <code>Math.floor()</code>, <code>Math.ceil()</code>.</div>
+</section>
+
+<section class="questao">
+  <h2>2. Formatação de casas decimais</h2>
+  <pre><code>const preco = 149.98765;</code></pre>
+  <p>Exiba o preço com exatamente duas casas decimais.</p>
+  <p><strong>Resultado esperado:</strong></p>
+  <pre><code>149.99</code></pre>
+  <div class="conceitos"><strong>Conceito principal:</strong> <code>toFixed()</code>.</div>
+  <div class="desafio"><strong>Desafio:</strong> transforme o resultado em um número novamente, em vez de deixá-lo como string.</div>
+</section>
+
+<section class="questao">
+  <h2>3. Conversão de string para número</h2>
+  <pre><code>const valor1 = "25";
+const valor2 = "17.5";</code></pre>
+  <p>Converta os dois valores para números e calcule:</p>
+  <ol>
+    <li>A soma.</li>
+    <li>A diferença.</li>
+    <li>O produto.</li>
+    <li>O quociente.</li>
+  </ol>
+  <p><strong>Resultado esperado:</strong></p>
+  <pre><code>Soma: 42.5
+Diferença: 7.5
+Produto: 437.5
+Quociente: 1.428571...</code></pre>
+  <div class="conceitos"><strong>Conceitos:</strong> <code>Number()</code>, operações aritméticas.</div>
+</section>
+
+<section class="questao">
+  <h2>4. Verificação de número válido</h2>
+  <p>Considere:</p>
+  <pre><code>const valor = "123.45";</code></pre>
+  <p>Crie um programa que verifique se o conteúdo pode ser convertido para um número válido.</p>
+  <p>O programa deverá informar:</p>
+  <pre><code>Valor numérico válido</code></pre>
+  <p>ou:</p>
+  <pre><code>Valor inválido</code></pre>
+  <div class="conceitos"><strong>Conceitos:</strong> <code>Number()</code>, <code>Number.isNaN()</code>.</div>
+</section>
+
+<section class="questao">
+  <h2>5. Verificação de inteiro</h2>
+  <pre><code>const numero = 42.0;</code></pre>
+  <p>Verifique se o valor armazenado na variável é um número inteiro.</p>
+  <p>O programa deverá exibir:</p>
+  <pre><code>O número é inteiro.</code></pre>
+  <p>ou:</p>
+  <pre><code>O número não é inteiro.</code></pre>
+  <div class="conceitos"><strong>Conceito principal:</strong> <code>Number.isInteger()</code>.</div>
+  <div class="desafio"><strong>Desafio:</strong> teste também os valores <code>42.5</code>, <code>"42"</code> e <code>NaN</code>.</div>
+</section>
+
+<section class="questao">
+  <h2>6. Maior e menor número</h2>
+  <p>Considere o conjunto:</p>
+  <pre><code>const numeros = [17, 4, 89, 32, 12, 56];</code></pre>
+  <p>Crie um programa que encontre:</p>
+  <ol>
+    <li>O maior número.</li>
+    <li>O menor número.</li>
+  </ol>
+  <p><strong>Resultado esperado:</strong></p>
+  <pre><code>Maior: 89
+Menor: 4</code></pre>
+  <div class="conceitos"><strong>Conceito principal:</strong> <code>Math.max()</code> e <code>Math.min()</code>.</div>
+  <div class="desafio"><strong>Desafio:</strong> utilize o operador spread (<code>...</code>) para passar os elementos do array aos métodos.</div>
+</section>
+
+<section class="questao">
+  <h2>7. Geração de número aleatório</h2>
+  <p>Crie uma função chamada <code>gerarNumero()</code> que retorne um número inteiro aleatório entre 1 e 100, incluindo os dois extremos.</p>
+  <p>Exemplo de utilização:</p>
+  <pre><code>console.log(gerarNumero());</code></pre>
+  <p>O resultado deverá ser um inteiro entre <strong>1</strong> e <strong>100</strong>.</p>
+  <div class="conceitos"><strong>Conceitos:</strong> <code>Math.random()</code>, <code>Math.floor()</code>.</div>
+</section>
+
+<section class="questao">
+  <h2>8. Cálculo de média</h2>
+  <pre><code>const nota1 = 7.5;
+const nota2 = 8.25;
+const nota3 = 9.0;</code></pre>
+  <p>Calcule a média das três notas e exiba o resultado com duas casas decimais.</p>
+  <p><strong>Resultado esperado:</strong></p>
+  <pre><code>Média: 8.25</code></pre>
+  <div class="conceitos"><strong>Conceitos:</strong> operações com números, divisão e <code>toFixed()</code>.</div>
+  <div class="desafio"><strong>Desafio:</strong> crie uma função que receba qualquer quantidade de notas.</div>
+</section>
+
+<section class="questao">
+  <h2>9. Limites numéricos</h2>
+  <p>Crie um programa que exiba:</p>
+  <ol>
+    <li>O maior número inteiro seguro que o JavaScript consegue representar com segurança.</li>
+    <li>O menor número inteiro seguro.</li>
+    <li>O maior valor numérico finito.</li>
+  </ol>
+  <p>Utilize propriedades da classe <code>Number</code>.</p>
+  <div class="conceitos"><strong>Conceitos:</strong> <code>Number.MAX_SAFE_INTEGER</code>, <code>Number.MIN_SAFE_INTEGER</code>, <code>Number.MAX_VALUE</code>.</div>
+  <div class="desafio"><strong>Desafio:</strong> explique a diferença entre <code>MAX_SAFE_INTEGER</code> e <code>MAX_VALUE</code>.</div>
+</section>
+
+<section class="questao">
+  <h2>10. Validação completa de valores numéricos</h2>
+  <p>Crie uma função chamada <code>analisarNumero()</code> que receba um valor e informe:</p>
+  <ul>
+    <li>Se o valor é realmente um número.</li>
+    <li>Se é um número inteiro.</li>
+    <li>Se é um número finito.</li>
+    <li>Se é um número seguro para operações inteiras.</li>
+  </ul>
+
+  <p>Teste a função com:</p>
+  <pre><code>analisarNumero(42);
+analisarNumero(42.5);
+analisarNumero("42");
+analisarNumero(Infinity);
+analisarNumero(NaN);</code></pre>
+
+  <div class="conceitos">
+    <strong>Conceitos:</strong>
+    <code>Number.isNaN()</code>,
+    <code>Number.isInteger()</code>,
+    <code>Number.isFinite()</code>,
+    <code>Number.isSafeInteger()</code>.
+  </div>
+
+  <div class="desafio"><strong>Desafio:</strong> faça a função retornar um objeto contendo todas as informações da análise.</div>
+</section>
+
+<h2>Progressão de dificuldade</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Exercício</th>
+      <th>Tema principal</th>
+      <th>Nível</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>1</td><td>Arredondamento</td><td>⭐</td></tr>
+    <tr><td>2</td><td>Casas decimais</td><td>⭐</td></tr>
+    <tr><td>3</td><td>Conversão de valores</td><td>⭐⭐</td></tr>
+    <tr><td>4</td><td>NaN e validação</td><td>⭐⭐</td></tr>
+    <tr><td>5</td><td>Verificação de inteiros</td><td>⭐⭐</td></tr>
+    <tr><td>6</td><td>Maior e menor valor</td><td>⭐⭐⭐</td></tr>
+    <tr><td>7</td><td>Números aleatórios</td><td>⭐⭐⭐</td></tr>
+    <tr><td>8</td><td>Média e formatação</td><td>⭐⭐⭐</td></tr>
+    <tr><td>9</td><td>Limites numéricos</td><td>⭐⭐⭐⭐</td></tr>
+    <tr><td>10</td><td>Validação completa</td><td>⭐⭐⭐⭐⭐</td></tr>
+  </tbody>
+</table>
+
+</main>
+
+<footer>
+  Lista de exercícios de JavaScript — API Number
+</footer>
+
+</body>
+</html>
