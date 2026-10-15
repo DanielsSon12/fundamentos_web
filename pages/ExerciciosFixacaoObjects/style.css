@@ -1,0 +1,21 @@
+
+:root{--primary:#2563eb;--dark:#111827;--bg:#f3f4f6;--card:#fff;--text:#1f2937;--muted:#6b7280}
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--text);background:var(--bg);line-height:1.65}
+header{background:var(--dark);color:#fff;text-align:center;padding:42px 20px}
+header h1{margin:0 0 10px;font-size:clamp(1.8rem,4vw,2.5rem)}
+header p{max-width:850px;margin:auto;color:#d1d5db}
+main{width:min(1050px,92%);margin:34px auto}
+.intro,.questao,.summary{background:var(--card);border-radius:12px;box-shadow:0 4px 14px rgba(0,0,0,.07)}
+.intro{padding:24px;margin-bottom:24px}
+.questao{padding:24px;margin-bottom:22px;border-left:5px solid var(--primary)}
+.questao h2{color:#1e40af;margin:0 0 14px;font-size:1.28rem}
+pre{background:#111827;color:#f9fafb;padding:16px;border-radius:8px;overflow-x:auto;white-space:pre-wrap}
+code{font-family:Consolas,Monaco,monospace}
+.conceitos,.desafio{padding:13px 15px;border-radius:8px;margin-top:15px}
+.conceitos{background:#eff6ff;border:1px solid #bfdbfe}
+.desafio{background:#fff7ed;border:1px solid #fed7aa}
+table{width:100%;border-collapse:collapse;background:#fff;border-radius:10px;overflow:hidden;margin-top:20px}
+th,td{padding:12px 14px;border-bottom:1px solid #e5e7eb;text-align:left}
+th{background:var(--primary);color:#fff}
+footer{text-align:center;padding:28px;color:var(--muted)}

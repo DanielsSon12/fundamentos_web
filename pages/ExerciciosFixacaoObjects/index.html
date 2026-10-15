@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Laboratório — Objects em JavaScript</title>
+<script src="script.js" defer></script>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+<h1>Laboratório: Objects em JavaScript</h1>
+<p>10 atividades práticas para exercitar criação, manipulação, consulta e composição de objetos.</p>
+</header>
+<main>
+<section class="intro">
+<h2>Orientações</h2>
+<p>Resolva as atividades utilizando os recursos de objetos indicados. O laboratório começa com operações básicas e evolui para objetos aninhados, métodos, arrays de objetos e composição de dados.</p>
+<p>Sempre que possível, transforme suas soluções em funções reutilizáveis e teste os códigos com diferentes valores.</p>
+<p><strong>Objetivo:</strong> desenvolver segurança no uso de objetos antes de avançar para aplicações maiores e estruturas de dados mais complexas.</p>
+</section>
+
+<section class="questao">
+<h2>1. Criando e acessando um objeto — Básico</h2>
+<pre><code>const aluno = {
+  nome: "Mariana",
+  idade: 21,
+  curso: "Sistemas de Informação"
+};</code></pre>
+<p>Exiba no console:<br>1. O nome do aluno.<br>2. A idade.<br>3. O curso.<br><br>Depois, altere a idade para 22.</p>
+<div class="conceitos"><strong>Conceitos:</strong> <code>notação de ponto e colchetes</code>.</div>
+<div class="desafio"><strong>Desafio: acesse cada propriedade utilizando uma forma diferente.</strong></div>
+</section>
+
+<section class="questao">
+<h2>2. Adicionando e removendo propriedades — Básico</h2>
+<pre><code>const produto = {
+  nome: "Notebook",
+  preco: 3500,
+  estoque: 10
+};</code></pre>
+<p>Adicione a propriedade categoria com o valor "Informática".<br>Altere o estoque para 8.<br>Remova a propriedade estoque.<br>Exiba o objeto final.</p>
+<div class="conceitos"><strong>Conceitos:</strong> <code>atribuição de propriedades, delete</code>.</div>
+<div class="desafio"><strong>Desafio: tente criar a propriedade desconto somente depois da criação do objeto.</strong></div>
+</section>
+
+<section class="questao">
+<h2>3. Verificando propriedades — Básico</h2>
+<pre><code>const usuario = {
+  nome: "Carlos",
+  email: "carlos@email.com",
+  idade: 30
+};</code></pre>
+<p>Verifique se o objeto possui as propriedades "email", "telefone" e "idade".<br>Mostre uma mensagem indicando quais propriedades existem.</p>
+<div class="conceitos"><strong>Conceitos:</strong> <code>Object.hasOwn(), in</code>.</div>
+<div class="desafio"><strong>Desafio: compare o comportamento de Object.hasOwn(usuario, "email") com "email" in usuario.</strong></div>
+</section>
+
+<section class="questao">
+<h2>4. Listando propriedades e valores — Básico</h2>
+<pre><code>const carro = {
+  marca: "Toyota",
+  modelo: "Corolla",
+  ano: 2024,
+  cor: "preto"
+};</code></pre>
+<p>Exiba:<br>1. Todas as propriedades do objeto.<br>2. Todos os valores.<br>3. Cada par propriedade/valor no formato:<br>marca: Toyota</p>
+<div class="conceitos"><strong>Conceitos:</strong> <code>Object.keys(), Object.values(), Object.entries()</code>.</div>
+<div class="desafio"><strong>Desafio: utilize Object.entries() para gerar as linhas automaticamente.</strong></div>
+</section>
+
+<section class="questao">
+<h2>5. Calculando dados de um objeto — Intermediário</h2>
+<pre><code>const produto = {
+  nome: "Teclado",
+  preco: 250,
+  quantidade: 4
+};</code></pre>
+<p>Crie uma propriedade total representando o valor total do estoque.<br>O cálculo deve ser preco × quantidade.<br><br>Resultado esperado:<br>total: 1000</p>
+<div class="conceitos"><strong>Conceitos:</strong> <code>acesso e criação de propriedades</code>.</div>
+<div class="desafio"><strong>Desafio: crie uma função calcularTotal(objeto) que funcione para qualquer produto com preco e quantidade.</strong></div>
+</section>
+
+<section class="questao">
+<h2>6. Trabalhando com objetos aninhados — Intermediário</h2>
+<pre><code>const funcionario = {
+  nome: "Ana",
+  cargo: "Desenvolvedora",
+  endereco: {
+    cidade: "Nova Friburgo",
+    estado: "RJ",
+    cep: "28600-000"
+  }
+};</code></pre>
+<p>Exiba a cidade, o estado e o CEP do funcionário.<br>Depois, altere a cidade para "Rio de Janeiro".</p>
+<div class="conceitos"><strong>Conceitos:</strong> <code>objetos aninhados e acesso encadeado</code>.</div>
+<div class="desafio"><strong>Desafio: utilize optional chaining (?) para acessar uma propriedade que pode não existir.</strong></div>
+</section>
+
+<section class="questao">
+<h2>7. Criando métodos em objetos — Intermediário</h2>
+<pre><code>const conta = {
+  titular: "João",
+  saldo: 1500
+};</code></pre>
+<p>Adicione ao objeto um método depositar(valor) que aumente o saldo.<br>Adicione também um método consultarSaldo() que exiba o saldo atual.<br><br>Teste:<br>conta.depositar(500);<br>conta.consultarSaldo();</p>
+<div class="conceitos"><strong>Conceitos:</strong> <code>métodos de objetos, this</code>.</div>
+<div class="desafio"><strong>Desafio: crie também um método sacar(valor) que impeça saques maiores que o saldo.</strong></div>
+</section>
+
+<section class="questao">
+<h2>8. Trabalhando com arrays de objetos — Intermediário</h2>
+<pre><code>const alunos = [
+  { nome: "Ana", nota: 8.5 },
+  { nome: "Bruno", nota: 6.0 },
+  { nome: "Carlos", nota: 9.2 },
+  { nome: "Daniel", nota: 7.0 }
+];</code></pre>
+<p>Crie operações para:<br>1. Listar os nomes dos alunos.<br>2. Encontrar os alunos com nota maior ou igual a 7.<br>3. Encontrar o aluno com a maior nota.<br>4. Calcular a média da turma.</p>
+<div class="conceitos"><strong>Conceitos:</strong> <code>map(), filter(), find(), reduce()</code>.</div>
+<div class="desafio"><strong>Desafio: ordene os alunos pela nota, da maior para a menor.</strong></div>
+</section>
+
+<section class="questao">
+<h2>9. Copiando e combinando objetos — Avançado</h2>
+<pre><code>const dadosPessoais = {
+  nome: "Marina",
+  idade: 28
+};
+
+const dadosProfissionais = {
+  cargo: "Analista",
+  salario: 4500
+};</code></pre>
+<p>Crie um novo objeto pessoa contendo todas as propriedades dos dois objetos.<br>Não altere os objetos originais.</p>
+<div class="conceitos"><strong>Conceitos:</strong> <code>Object.assign(), spread operator (...)</code>.</div>
+<div class="desafio"><strong>Desafio: crie uma terceira propriedade chamada resumo com uma frase gerada a partir dos dados.</strong></div>
+</section>
+
+<section class="questao">
+<h2>10. Laboratório final — sistema de produtos — Avançado</h2>
+<pre><code>const produtos = [
+  { id: 1, nome: "Notebook", categoria: "Informática", preco: 3500, estoque: 4 },
+  { id: 2, nome: "Mouse", categoria: "Informática", preco: 120, estoque: 15 },
+  { id: 3, nome: "Cadeira", categoria: "Móveis", preco: 900, estoque: 6 },
+  { id: 4, nome: "Teclado", categoria: "Informática", preco: 250, estoque: 10 }
+];</code></pre>
+<p>Crie um programa que:<br>1. Liste os nomes dos produtos.<br>2. Calcule o valor total em estoque de cada produto (preco × estoque).<br>3. Calcule o valor total de todo o estoque.<br>4. Encontre o produto mais caro.<br>5. Liste somente os produtos da categoria "Informática".<br>6. Encontre o produto pelo id informado.<br>7. Crie um resumo contendo quantidade de produtos e valor total do estoque.</p>
+<div class="conceitos"><strong>Conceitos:</strong> <code>objetos, arrays de objetos, map(), filter(), find(), reduce(), Object.keys()</code>.</div>
+<div class="desafio"><strong>Desafio final: organize a solução em funções reutilizáveis e evite alterar diretamente os objetos originais.</strong></div>
+</section>
+
+<section class="summary">
+<h2>Mapa das atividades</h2>
+<table>
+<thead><tr><th>#</th><th>Principal conteúdo</th><th>Nível</th></tr></thead>
+<tbody>
+<tr><td>1</td><td>Criação e acesso a propriedades</td><td>⭐</td></tr>
+<tr><td>2</td><td>Adição, alteração e remoção</td><td>⭐</td></tr>
+<tr><td>3</td><td>Verificação de propriedades</td><td>⭐</td></tr>
+<tr><td>4</td><td>Object.keys / values / entries</td><td>⭐⭐</td></tr>
+<tr><td>5</td><td>Cálculos com propriedades</td><td>⭐⭐</td></tr>
+<tr><td>6</td><td>Objetos aninhados</td><td>⭐⭐</td></tr>
+<tr><td>7</td><td>Métodos e this</td><td>⭐⭐⭐</td></tr>
+<tr><td>8</td><td>Arrays de objetos</td><td>⭐⭐⭐</td></tr>
+<tr><td>9</td><td>Cópia e combinação de objetos</td><td>⭐⭐⭐⭐</td></tr>
+<tr><td>10</td><td>Sistema completo com objetos</td><td>⭐⭐⭐⭐⭐</td></tr>
+</tbody>
+</table>
+</section>
+</main>
+<footer>Laboratório de JavaScript — Objects</footer>
+</body>
+</html>
