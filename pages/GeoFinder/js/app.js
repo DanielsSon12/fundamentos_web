@@ -92,13 +92,11 @@ function aplicarFiltros() {
   exibirPaises(paisesFiltrados);
 }
 
-// Eventos dos filtros
 document.getElementById("campoBusca").addEventListener("input", aplicarFiltros);
 document
   .getElementById("filtroRegiao")
   .addEventListener("change", aplicarFiltros);
 
-// Ordenações
 function ordenarPorNome() {
   paisesFiltrados.sort((a, b) => a.name.common.localeCompare(b.name.common));
 
@@ -117,7 +115,6 @@ function ordenarPorArea() {
   exibirPaises(paisesFiltrados);
 }
 
-// Estatísticas com reduce
 function calcularEstatisticas() {
   const totalPopulacao = paises.reduce(
     (total, pais) => total + pais.population,
@@ -138,38 +135,46 @@ function calcularEstatisticas() {
     `;
 }
 
-// Detalhes (usando find)
 function detalhesPais(nome) {
-  nome = decodeURIComponent(nome);
+    nome = decodeURIComponent(nome);
 
-  const pais = paises.find((pais) => pais.name.common === nome);
+    const pais = paises.find(pais => pais.name.common === nome);
 
-  if (pais) {
-    const moedas = Array.isArray(pais.currencies)
-      ? pais.currencies.map((moeda) => moeda.name).join(", ")
-      : Object.values(pais.currencies)
-          .map((moeda) => moeda.name)
-          .join(", ");
+    if (pais) {
+        const moedas = Array.isArray(pais.currencies)
+            ? pais.currencies.map(moeda => moeda.name).join(", ")
+            : Object.values(pais.currencies || {}).map(moeda => moeda.name).join(", ");
 
-    const idiomas = Array.isArray(pais.languages)
-      ? pais.languages.map((idioma) => idioma.name).join(", ")
-      : Object.values(pais.languages).join(", ");
+        const idiomas = Array.isArray(pais.languages)
+            ? pais.languages.map(idioma => idioma.name).join(", ")
+            : Object.values(pais.languages || {}).join(", ");
 
-    document.getElementById("detalhesPais").innerHTML = `
-            <h2>${pais.name.common}</h2>
+        const detalhes = document.getElementById("detalhesPais");
 
-            ${
-              pais.flags.png
-                ? `<img src="${pais.flags.png}" alt="Bandeira">`
-                : `<h2>${pais.flag || ""}</h2>`
-            }
+        detalhes.style.display = "block";
 
-            <p>Moedas: ${moedas || "Não informado"}</p>
-            <p>Idiomas: ${idiomas || "Não informado"}</p>
-            <p>Sub-região: ${pais.subregion}</p>
-            <p>Fronteiras: ${pais.borders.length > 0 ? pais.borders.join(", ") : "Nenhuma"}</p>
+        detalhes.innerHTML = `
+            <h2>Detalhes de ${pais.name.common}</h2>
+
+            <img src="${pais.flags.png}" alt="Bandeira de ${pais.name.common}">
+
+            <p><strong>Moedas:</strong> ${moedas || "Não informado"}</p>
+
+            <p><strong>Idiomas:</strong> ${idiomas || "Não informado"}</p>
+
+            <p><strong>Sub-região:</strong> ${pais.subregion || "Não informado"}</p>
+
+            <p><strong>Fronteiras:</strong> ${pais.borders.length > 0 ? pais.borders.join(", ") : "Nenhuma"}</p>
+
+            <button onclick="fecharDetalhes()">Fechar</button>
         `;
-  }
+
+        detalhes.scrollIntoView({ behavior: "smooth" });
+    }
+}
+
+function fecharDetalhes() {
+    document.getElementById("detalhesPais").style.display = "none";
 }
 
 carregarPaises();

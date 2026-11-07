@@ -42,11 +42,22 @@ h1 {
 }
 
 #detalhesPais {
-  margin-top: 20px;
+    display: none;
+    margin-top: 20px;
+    padding: 20px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
 }
 
 #detalhesPais img {
-  width: 200px;
+    width: 150px;
+    border-radius: 6px;
+}
+
+#detalhesPais button {
+    padding: 8px 15px;
+    cursor: pointer;
 }
 
 #estatisticas {
