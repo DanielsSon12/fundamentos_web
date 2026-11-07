@@ -1,0 +1,57 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 20px;
+  background: #f4f4f4;
+}
+
+h1 {
+  text-align: center;
+}
+
+#controles {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+#controles input,
+#controles select,
+#controles button {
+  padding: 10px;
+  margin: 5px;
+}
+
+#listaPaises {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 15px;
+}
+
+.pais {
+  background: #fff;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+}
+
+.pais img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+#detalhesPais {
+  margin-top: 20px;
+}
+
+#detalhesPais img {
+  width: 200px;
+}
+
+#estatisticas {
+  margin-top: 30px;
+  background: #fff;
+  padding: 15px;
+  border-radius: 10px;
+}

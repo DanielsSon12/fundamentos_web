@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GeoFinder - Consulta de Países</title>
+  <link rel="stylesheet" href="./css/estilo.css">
+</head>
+
+<body>
+
+  <h1>🌍 GeoFinder</h1>
+
+  <section id="controles">
+    <input id="campoBusca" type="text" placeholder="Buscar país pelo nome">
+
+    <select id="filtroRegiao">
+      <option value="">Todas as Regiões</option>
+      <option value="Africa">África</option>
+      <option value="Americas">Américas</option>
+      <option value="Asia">Ásia</option>
+      <option value="Europe">Europa</option>
+      <option value="Oceania">Oceania</option>
+      <option value="Antarctic">Antártida</option>
+    </select>
+
+    <button onclick="ordenarPorNome()">Ordenar por Nome</button>
+    <button onclick="ordenarPorPopulacao()">Ordenar por População</button>
+    <button onclick="ordenarPorArea()">Ordenar por Área</button>
+  </section>
+
+  <section id="listaPaises"></section>
+
+  <section id="detalhesPais"></section>
+
+  <section id="estatisticas"></section>
+
+  <script src="./js/app.js"></script>
+</body>
+
+</html>
